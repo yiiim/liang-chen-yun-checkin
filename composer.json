@@ -1,0 +1,10 @@
+{
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "name": "hughcube/liang-chen-yun-checkin",
+  "description": "良辰云自动签到",
+  "require": {
+    "symfony/process": "^5.0",
+    "facebook/webdriver": "^1.7"
+  }
+}
