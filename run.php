@@ -88,7 +88,7 @@ $driver->executeScript("arguments[0].click();", [$loginButtonElement]);
 Checkin:
 
 /** 最多重试5次 */
-if (5 < $repeatCount) {
+if (5 <= $repeatCount) {
     goto Result;
 }
 
@@ -116,6 +116,7 @@ try {
 
 /** 判断今天是否已经签到 */
 try {
+    $repeatCount++;
     echo date('Y-m-d H:i:s') . " 第{$repeatCount}次检查", PHP_EOL;
 
     $message = WebDriverBy::cssSelector('a.btn.btn-brand.disabled.btn-flat');
@@ -135,7 +136,7 @@ try {
     sleep(10);
 
     /** 因为经常获取不到签到后的信息, 所有直接刷新页面去处理 */
-    echo date('Y-m-d H:i:s') . " 刷新页面去检查签到结果", PHP_EOL;
+    echo date('Y-m-d H:i:s') . " 刷新页面去检查签到结果......", PHP_EOL;
     $driver->executeScript("location.reload();");
     $repeatCount++;
     goto Checkin;
