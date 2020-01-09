@@ -28,8 +28,6 @@ jobs:
       - name: Install selenium
         run: |
           sudo wget -q -O /usr/bin/selenium.jar https://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar
-          //sudo wget -q -O /usr/bin/chromedriver.zip https://chromedriver.storage.googleapis.com/79.0.3945.36/chromedriver_linux64.zip
-          //sudo unzip -o /usr/bin/chromedriver.zip -d /usr/bin/
 
       - name: Install php dependencies
         run: |
