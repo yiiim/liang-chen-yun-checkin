@@ -27,9 +27,7 @@ jobs:
 
       - name: Install selenium
         run: |
-          sudo apt-get update
-          sudo apt install python-pip
-          sudo pip install selenium
+          sudo wget -q -O /usr/bin/selenium.jar https://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar
 
       - name: Install php dependencies
         run: |
