@@ -20,10 +20,9 @@ jobs:
           cat /etc/issue
           sudo lsb_release -a
 
-      - name: Install Google Chrome
+      - name: Install Google Chrome (sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb)
         run: |
           sudo apt-get install -y libgbm1
-#sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo dpkg -i google-chrome-stable_current_amd64.deb
 
       - name: Install selenium
