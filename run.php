@@ -18,34 +18,21 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
 $email = $argv[1];
 $password = $argv[2];
-$startSelenium = !isset($argv[3]) || '1' == $argv[3];
 
 /** @var integer $repeatCount 记录重试次数 */
 $repeatCount = 0;
 
-/** 启动 selenium */
-if ($startSelenium) {
-    $process = new Process(['java', '-jar', '/usr/bin/selenium.jar', '-port', '4444']);
-    $process->start();
-    sleep(15);
-    if (!$process->isRunning()) {
-        echo $process->getErrorOutput(), PHP_EOL;
-        throw new Exception('selenium 启动失败');
-    }
-    echo date('Y-m-d H:i:s') . "  selenium 启动成功", PHP_EOL;
-}
-
 
 $isOk = false;
 
-$url = 'https://call-3u8633.com/';
+$url = 'https://saocaozuo.me/';
 $host = 'http://localhost:4444/wd/hub';
 
 /** 设置代理调试的时候使用 */
 //$capabilities->setCapability(WebDriverCapabilityType::PROXY, ['proxyType' => 'system', 'httpProxy' => 'localhost:8888']);
 
 $options = new ChromeOptions();
-$options->addArguments(['--headless', '--no-sandbox']);
+#$options->addArguments(['--headless', '--no-sandbox']);
 
 $capabilities = DesiredCapabilities::chrome();
 $capabilities->setCapability(ChromeOptions::CAPABILITY, $options);
