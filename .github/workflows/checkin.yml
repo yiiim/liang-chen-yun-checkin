@@ -12,6 +12,14 @@ jobs:
   build:
     runs-on: ubuntu-18.04
 
+    services:
+      selenium:
+        image: selenium/standalone-chrome:3.141.59
+        ports:
+          - 4444:4444
+        volumes:
+          - /dev/shm:/dev/shm
+
     steps:
       - uses: actions/checkout@v1
 
@@ -19,17 +27,6 @@ jobs:
         run: |
           cat /etc/issue
           sudo lsb_release -a
-
-      - name: Install Google Chrome
-        run: |
-          sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo dpkg -i google-chrome-stable_current_amd64.deb
-
-      - name: Install selenium
-        run: |
-          sudo wget -q -O /usr/bin/selenium.jar https://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar
-          sudo wget -q -O /usr/bin/chromedriver.zip https://chromedriver.storage.googleapis.com/79.0.3945.36/chromedriver_linux64.zip
-          sudo unzip /usr/bin/chromedriver.zip -d /usr/bin/
 
       - name: Install php dependencies
         run: |

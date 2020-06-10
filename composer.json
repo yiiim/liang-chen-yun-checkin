@@ -4,7 +4,6 @@
   "name": "hughcube/liang-chen-yun-checkin",
   "description": "良辰云自动签到",
   "require": {
-    "symfony/process": "^5.0",
-    "facebook/webdriver": "^1.7"
+    "php-webdriver/webdriver": "1.8.2"
   }
 }
