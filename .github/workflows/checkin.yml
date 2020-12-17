@@ -27,6 +27,11 @@ jobs:
         run: |
           cat /etc/issue
           sudo lsb_release -a
+          
+      - name: Setup PHP
+        uses: shivammathur/setup-php@master
+        with:
+          php-version: "7.0"
 
       - name: Install php dependencies
         run: |
