@@ -25,7 +25,7 @@ $repeatCount = 0;
 
 $isOk = false;
 
-$url = 'https://saocaozuo.me/';
+$url = 'https://良辰美景.icu/';
 $host = 'http://localhost:4444/wd/hub';
 
 /** 设置代理调试的时候使用 */

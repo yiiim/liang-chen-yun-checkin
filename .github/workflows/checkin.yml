@@ -27,7 +27,12 @@ jobs:
         run: |
           cat /etc/issue
           sudo lsb_release -a
-
+          
+      - name: Setup PHP
+        uses: shivammathur/setup-php@master
+        with:
+          php-version: 7.0
+          extensions: mbstring, zip
       - name: Install php dependencies
         run: |
           composer install --prefer-dist --no-progress --no-suggest

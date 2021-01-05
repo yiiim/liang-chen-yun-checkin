@@ -1,4 +1,4 @@
-<h1 align="center">良辰云 Checkin </h1>
+<h1 align="center">Checkin </h1>
 
 <p>
     <a href="https://github.com/hughcube/liang-chen-yun-checkin/actions?query=workflow%3ACheckin">
